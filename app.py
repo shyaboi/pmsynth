@@ -1,32 +1,32 @@
 from pynput import keyboard
 from notes import aNote, aSharp, bNote, cNote, cSharp, dNote, dSharp, eNote, fNote, fSharp, gNote, gSharp, aNote
-
+go = 1
 
 def on_press(key):
     if key.char == "a":
-        aNote()
+        aNote(go)
     if key.char == "s":
-        aSharp()
+        aSharp(go)
     if key.char == "d":
-        bNote()
+        bNote(go)
     if key.char == "f":
-        cNote()
+        cNote(go)
     if key.char == "g":
-        cSharp()
+        cSharp(go)
     if key.char == "h":
-        dNote()
+        dNote(go)
     if key.char == "j":
-        dSharp()
+        dSharp(go)
     if key.char == "k":
-        eNote()
+        eNote(go)
     if key.char == "l":
-        fNote()
+        fNote(go)
     if key.char == ";":
-        fSharp()
+        fSharp(go)
     if key.char == "'":
-        gNote()
+        gNote(go)
     if key.char == "z":
-        gSharp()
+        gSharp(go)
 
 def on_release(key):
     print('{0} released'.format(

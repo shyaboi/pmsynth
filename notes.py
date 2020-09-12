@@ -3,16 +3,18 @@ import simpleaudio as sa
 
 # modify later all frequecies for later dynamic tuning
 globalNoteFrequency = 0
+globalOctave = 2
 
-def aNote():
-    frequency = 440  # Our played note will be 440 Hz
+
+def aNote(globalOctave):
+    frequency = globalNoteFrequency + 440  # Our played note will be 440 Hz
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -26,15 +28,15 @@ def aNote():
     # play_obj.wait_done()
 
 
-def aSharp():
-    frequency = 466.16  
+def aSharp(globalOctave):
+    frequency = globalNoteFrequency + 466.16  
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -47,15 +49,15 @@ def aSharp():
     # Wait for playback to finish before exiting
     # play_obj.wait_done()
 
-def bNote():
-    frequency = 493.88  
+def bNote(globalOctave):
+    frequency =globalNoteFrequency + 493.88  
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -68,15 +70,15 @@ def bNote():
     # Wait for playback to finish before exiting
     # play_obj.wait_done()
 
-def cNote():
-    frequency = 523.25  
+def cNote(globalOctave):
+    frequency =globalNoteFrequency + 523.25  
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -89,15 +91,15 @@ def cNote():
     # Wait for playback to finish before exiting
     # play_obj.wait_done()
 
-def cSharp():
-    frequency = 554.37  
+def cSharp(globalOctave):
+    frequency =globalNoteFrequency + 554.37  
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -112,15 +114,15 @@ def cSharp():
 
 
     
-def dNote():
-    frequency = 587.33  
+def dNote(globalOctave):
+    frequency =globalNoteFrequency + 587.33  
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -133,15 +135,15 @@ def dNote():
     # Wait for playback to finish before exiting
     # play_obj.wait_done()
 
-def dSharp():
-    frequency = 622.25 
+def dSharp(globalOctave):
+    frequency =globalNoteFrequency + 622.25 
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -154,15 +156,15 @@ def dSharp():
     # Wait for playback to finish before exiting
 
 
-def eNote():
-    frequency = 659.25 
+def eNote(globalOctave):
+    frequency =globalNoteFrequency + 659.25 
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -175,15 +177,15 @@ def eNote():
     # Wait for playback to finish before exiting
 
 
-def fNote():
-    frequency = 698.46 
+def fNote(globalOctave):
+    frequency = globalNoteFrequency + 698.46 
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -194,15 +196,15 @@ def fNote():
     play_obj = sa.play_buffer(audio, 1, 2, fs)
 
 
-def fSharp():
-    frequency = 739.99 
+def fSharp(globalOctave):
+    frequency =globalNoteFrequency + 739.99 
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -212,35 +214,15 @@ def fSharp():
     # Start playback
     play_obj = sa.play_buffer(audio, 1, 2, fs)
 
-def fSharp():
-    frequency = 739.99 
+def fSharp(globalOctave):
+    frequency =globalNoteFrequency + 739.99 
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
-
-    # Ensure that highest value is in 16-bit range
-    audio = note * (2**15 - 1) / np.max(np.abs(note))
-    # Convert to 16-bit data
-    audio = audio.astype(np.int16)
-
-    # Start playback
-    play_obj = sa.play_buffer(audio, 1, 2, fs)
-
-
-
-def gNote():
-    frequency = 783.99 
-    fs = 44100  # 44100 samples per second
-    seconds = 3  # Note duration of 3 seconds
-    # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
-    t = np.linspace(0, seconds, seconds * fs, False)
-
-    # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -251,15 +233,35 @@ def gNote():
     play_obj = sa.play_buffer(audio, 1, 2, fs)
 
 
-def gSharp():
-    frequency = 830.61 
+
+def gNote(globalOctave):
+    frequency =globalNoteFrequency + 783.99 
     fs = 44100  # 44100 samples per second
     seconds = 3  # Note duration of 3 seconds
     # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
     t = np.linspace(0, seconds, seconds * fs, False)
 
     # Generate a 440 Hz sine wave
-    note = np.sin(frequency * t * 2 * np.pi)
+    note = np.sin(frequency * t * globalOctave * np.pi)
+
+    # Ensure that highest value is in 16-bit range
+    audio = note * (2**15 - 1) / np.max(np.abs(note))
+    # Convert to 16-bit data
+    audio = audio.astype(np.int16)
+
+    # Start playback
+    play_obj = sa.play_buffer(audio, 1, 2, fs)
+
+
+def gSharp(globalOctave):
+    frequency =globalNoteFrequency + 830.61 
+    fs = 44100  # 44100 samples per second
+    seconds = 3  # Note duration of 3 seconds
+    # Generate array with seconds*sample_rate steps, ranging between 0 and seconds
+    t = np.linspace(0, seconds, seconds * fs, False)
+
+    # Generate a 440 Hz sine wave
+    note = np.sin(frequency * t * globalOctave * np.pi)
 
     # Ensure that highest value is in 16-bit range
     audio = note * (2**15 - 1) / np.max(np.abs(note))
@@ -279,7 +281,7 @@ def gSharp():
 #     t = np.linspace(0, seconds, seconds * fs, False)
 
 #     # Generate a 440 Hz sine wave
-#     note = np.sin(frequency * t * 2 * np.pi)
+#     note = np.sin(frequency * t * globalOctave * np.pi)
 
 #     # Ensure that highest value is in 16-bit range
 #     audio = note * (2**15 - 1) / np.max(np.abs(note))
